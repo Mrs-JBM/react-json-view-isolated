@@ -1,5 +1,5 @@
 {
-  "name": "@jbm/react-json-view",
+  "name": "@jonhjbm/react-json-view",
   "description": "Interactive react component for displaying javascript arrays and JSON objects (isolated runtime).",
   "homepage": "https://github.com/Mrs-JBM/react-json-view-isolated",
   "version": "1.27.0",
