@@ -1,8 +1,8 @@
 {
-  "name": "@microlink/react-json-view",
-  "description": "Interactive react component for displaying javascript arrays and JSON objects.",
-  "homepage": "https://github.com/microlinkhq/react-json-view",
-  "version": "1.27.0",
+  "name": "@jbm/react-json-view",
+  "description": "Interactive react component for displaying javascript arrays and JSON objects (isolated runtime).",
+  "homepage": "https://github.com/Mrs-JBM/react-json-view-isolated",
+  "version": "1.27.0-isolated.1",
   "main": "dist/main.js",
   "author": {
     "name": "Mac Gainor"
@@ -179,14 +179,18 @@
     {
       "name": "n1c0de",
       "email": "n1c0de@protonmail.com"
+    },
+    {
+      "name": "jbm",
+      "email": "jonathanjbm@outlook.es"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/microlinkhq/react-json-view.git"
+    "url": "git+https://github.com/Mrs-JBM/react-json-view-isolated.git"
   },
   "bugs": {
-    "url": "https://github.com/microlinkhq/react-json-view/issues"
+    "url": "https://github.com/Mrs-JBM/react-json-view-isolated/issues"
   },
   "keywords": [
     "array-viewer",
@@ -211,6 +215,7 @@
     "treeview"
   ],
   "dependencies": {
+    "preact": "^10.22.0",
     "react-base16-styling": "~0.9.0",
     "react-lifecycles-compat": "~3.0.4",
     "react-textarea-autosize": "~8.5.7"
@@ -221,6 +226,7 @@
     "@babel/plugin-proposal-private-property-in-object": "~7.21.11",
     "@babel/plugin-syntax-class-properties": "~7.12.1",
     "@babel/plugin-syntax-jsx": "~7.12.1",
+    "@babel/plugin-transform-react-jsx": "^7.23.4",
     "@babel/register": "7.12.10",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
@@ -234,8 +240,6 @@
     "chai": "~4.2.0",
     "cheerio": "1.0.0-rc.3",
     "css-loader": "~4.3.0",
-    "enzyme": "~3.11.0",
-    "enzyme-adapter-react-16": "~1.15.5",
     "finepack": "latest",
     "github-generate-release": "latest",
     "html-webpack-plugin": "^4.5.2",
@@ -246,10 +250,6 @@
     "nano-staged": "latest",
     "nyc": "~15.1.0",
     "prettier": "~2.2.1",
-    "react": "~16.14.0",
-    "react-dom": "~16.14.0",
-    "react-select": "~1.1.0",
-    "react-test-renderer": "~16.14.0",
     "sass": "~1.47.0",
     "sass-loader": "~10.1.1",
     "simple-git-hooks": "latest",
@@ -276,7 +276,7 @@
     "build": "NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production webpack --config webpack/webpack.config.js --progress",
     "dev": "NODE_ENV=development webpack serve --config webpack/webpack.config-dev.js --open",
     "docs:build": "NODE_ENV=production webpack --node-env production --config webpack/webpack.config-docs.js --progress",
-    "docs:dev": "tinyrun 'npm run docs:dev:watch' 'npm run docs:dev:browserync'",
+    "docs:dev": "tinyrun \"npm run docs:dev:watch\" \"npm run docs:dev:browserync\"",
     "docs:dev:browserync": "browser-sync start --serveStatic docs/ --server --files 'index.html, **/*.(css|js|md)'",
     "docs:dev:watch": "npm run docs:build -- --watch",
     "lint": "standard",
@@ -311,10 +311,6 @@
     "package.json": [
       "finepack"
     ]
-  },
-  "peerDependencies": {
-    "react": ">= 15",
-    "react-dom": ">= 15"
   },
   "simple-git-hooks": {
     "commit-msg": "npx commitlint --edit",

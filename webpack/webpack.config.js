@@ -1,5 +1,5 @@
 const path = require('path')
-const webpack = require('webpack')
+// const webpack = require('webpack')
 const TerserPlugin = require('terser-webpack-plugin')
 
 const PATHS = {
@@ -38,7 +38,12 @@ const config = {
   },
   plugins: [],
   resolve: {
-    extensions: ['.js', '.json', '.css', '.scss']
+    extensions: ['.js', '.json', '.css', '.scss'],
+    alias: {
+      react: 'preact/compat',
+      'react-dom': 'preact/compat',
+      'react/jsx-runtime': 'preact/jsx-runtime'
+    }
   },
   module: {
     rules: [
